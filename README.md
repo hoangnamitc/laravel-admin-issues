@@ -36,5 +36,22 @@ More:
 - https://github.com/z-song/laravel-admin/issues/1195
 - https://github.com/z-song/laravel-admin/issues/2379
 
+#
+- ### Nested parent child on Tree class
+	- Add to class model
+```
+public function parent()
+{
+	return $this->belongsTo('App\Models\Category', 'parent_id');
+}
 
-- ###
+public function children()
+{
+	return $this->hasMany('App\Models\Category', 'parent_id');
+}
+
+public function childrenRecursive()
+{
+	return $this->children()->with('childrenRecursive');
+}
+```
