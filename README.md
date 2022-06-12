@@ -82,4 +82,8 @@ public function childrenRecursive()
 	});
 	```
 	
-#	
+#
+- ### Thumbnail
+	https://github.com/z-song/laravel-admin/pull/3453#issuecomment-501730548
+
+#
