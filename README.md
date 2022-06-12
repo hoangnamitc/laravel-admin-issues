@@ -36,6 +36,8 @@ public function setPicturesAttribute($pictures)
 }
 ```
 
+<img width="529" alt="image" src="https://user-images.githubusercontent.com/7042462/173233758-807b1f1c-d1d1-482a-94f4-088f6d903e6f.png">
+
 More:
 
 - https://github.com/z-song/laravel-admin/issues/1195#issuecomment-330110024 
