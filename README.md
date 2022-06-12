@@ -102,3 +102,7 @@ $form->saving(function (Form $form) {
 	- <https://github.com/z-song/laravel-admin/pull/3453#issuecomment-501730548>
 
 #
+- ### remove image multiple
+![remove-ImageMultiple](https://user-images.githubusercontent.com/7042462/173233469-e7dcbdc4-6d82-48ba-bbe9-f991484de93d.svg)
+
+#
