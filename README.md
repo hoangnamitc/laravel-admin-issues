@@ -38,8 +38,8 @@ public function setPicturesAttribute($pictures)
 
 More:
 
-- <https://github.com/z-song/laravel-admin/issues/1195>
-- <https://github.com/z-song/laravel-admin/issues/2379>
+- https://github.com/z-song/laravel-admin/issues/1195#issuecomment-330110024 
+- https://github.com/z-song/laravel-admin/issues/2379#issuecomment-416175367 
 
 #
 
@@ -99,6 +99,6 @@ $form->saving(function (Form $form) {
 
 - ### Thumbnail
 
-<https://github.com/z-song/laravel-admin/pull/3453#issuecomment-501730548>
+	- <https://github.com/z-song/laravel-admin/pull/3453#issuecomment-501730548>
 
 #
