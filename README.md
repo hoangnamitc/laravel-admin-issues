@@ -70,6 +70,10 @@ public function childrenRecursive()
 	- Add to method form() - controller
 	```
 	$form->saving(function (Form $form) {
+		if (blank($form->slug) && filled($form->title)) {
+			$form->slug = Str::slug($form->title);
+		}
+	
 		if (blank($form->_order)) {
 			if (blank($form->input('seo.title'))) {
 				$form->input('seo.title', Str::substr($form->title, 0, 65));
