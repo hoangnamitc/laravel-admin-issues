@@ -55,3 +55,27 @@ public function childrenRecursive()
 	return $this->children()->with('childrenRecursive');
 }
 ```
+
+#
+- ### Delete with Relationship
+	-  Add to model
+	```
+	protected static function booted()
+    {
+        static::deleting(function (Category $category) {
+            $category->seo()->delete();
+        });
+    }
+	```
+	- Add to method form() - controller
+	```
+	$form->saving(function (Form $form) {
+		if (blank($form->_order)) {
+			if (blank($form->input('seo.title'))) {
+				$form->input('seo.title', Str::substr($form->title, 0, 65));
+			}
+		}
+	});
+	```
+	
+#	
