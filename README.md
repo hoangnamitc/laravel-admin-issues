@@ -1,8 +1,9 @@
 # laravel-admin-issues
 
-
 - ### Fixes Array to string conversion - when use MultipleSelect | Checkbox
+
   - Add to class model (Replace "Location","Pictures" to inputName)
+
 ```
 public function getLocationAttribute($value)
 {
@@ -14,7 +15,9 @@ public function setLocationAttribute($value)
 	$this->attributes['location'] = implode(',', $value);
 }
 ```
+
 OR
+
 ```
 public function getPicturesAttribute($pictures)
 {
@@ -32,13 +35,18 @@ public function setPicturesAttribute($pictures)
     }
 }
 ```
+
 More:
-- https://github.com/z-song/laravel-admin/issues/1195
-- https://github.com/z-song/laravel-admin/issues/2379
+
+- <https://github.com/z-song/laravel-admin/issues/1195>
+- <https://github.com/z-song/laravel-admin/issues/2379>
 
 #
+
 - ### Nested parent child on Tree class
-	- Add to class model
+
+  - Add to class model
+
 ```
 public function parent()
 {
@@ -57,33 +65,40 @@ public function childrenRecursive()
 ```
 
 #
+
 - ### Delete with Relationship
-	-  Add to model
-	```
-	protected static function booted()
-    {
-        static::deleting(function (Category $category) {
-            $category->seo()->delete();
-        });
-    }
-	```
-	- Add to method form() - controller
-	```
-	$form->saving(function (Form $form) {
-		if (blank($form->slug) && filled($form->title)) {
-			$form->slug = Str::slug($form->title);
-		}
-	
-		if (blank($form->_order)) {
-			if (blank($form->input('seo.title'))) {
-				$form->input('seo.title', Str::substr($form->title, 0, 65));
-			}
-		}
+
+  - Add to model
+
+```
+protected static function booted()
+{
+	static::deleting(function (Category $category) {
+		$category->seo()->delete();
 	});
-	```
-	
+}
+```
+
+- Add to method form() - controller
+
+```
+$form->saving(function (Form $form) {
+	if (blank($form->slug) && filled($form->title)) {
+		$form->slug = Str::slug($form->title);
+	}
+
+	if (blank($form->_order)) {
+		if (blank($form->input('seo.title'))) {
+			$form->input('seo.title', Str::substr($form->title, 0, 65));
+		}
+	}
+});
+```
+
 #
+
 - ### Thumbnail
-	https://github.com/z-song/laravel-admin/pull/3453#issuecomment-501730548
+
+<https://github.com/z-song/laravel-admin/pull/3453#issuecomment-501730548>
 
 #
